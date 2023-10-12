@@ -1,0 +1,17 @@
+{% extends 'layout/base.html'  %}
+{% load static %}
+{% block title %} Login{% endblock %}
+
+<!--enctype="multipart/form-data"-->
+{% block content %}
+<div class="bg-light">
+    <h1> register</h1>
+    <form  enctype="multipart/form-data" method="post" >
+        {% csrf_token %}
+        {{form}}
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+
+    <script src="{% static 'students/js/script.js' %}"></script>
+
+    {% endblock %}

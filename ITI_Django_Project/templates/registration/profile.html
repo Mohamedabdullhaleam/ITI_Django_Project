@@ -1,0 +1,11 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% block title %}  Profile  {% endblock %}
+
+{% block content %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <h1>Logged in successfully!</h1>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<script src="{% static 'students/js/script.js'%}"> </script>
+{% endblock %}

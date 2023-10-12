@@ -1,0 +1,24 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% block title %}  Profile {% endblock %}
+
+
+{% block content %}
+
+    <br/>
+    User name : {{user.username}}
+    <br/>
+    First Name:{{user.first_name}}
+    <br/>
+    Last Name:{{user.last_name}}
+    <br/>
+    Email:{{user.email}}
+<br/>
+    <a href="{% url 'update.user' user.id %}" class="btn btn-danger">Update</a>
+
+
+    {% endblock %}
+
+{#
+
+

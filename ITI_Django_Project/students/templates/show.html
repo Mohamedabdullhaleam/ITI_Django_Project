@@ -1,0 +1,21 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% block title %}  All Books  {% endblock %}
+
+
+{% block content %}
+<div class="bg-light"  align="center">
+    <h1> {{allbooks.name}} Info </h1>
+
+    <div class="card" style="width: 18rem;">
+        <img src="{{allbooks.get_image_url}}" class="card-img-top" alt="..." width="200" height="200">
+        <div class="card-body">
+            <h5 class="card-title">{{allbooks.name}}</h5>
+            <p class="card-text">description:{{allbooks.description}}</p>
+            <p class="card-text">Created at: {{allbooks.created_at}}</p>
+            <p class="card-text">Updated ar: {{allbooks.updated_at}}</p>
+            <a href="{% url 'all_books'%}" class="btn btn-danger">Back to All Books</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

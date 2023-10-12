@@ -1,0 +1,106 @@
+ul{
+    padding: 0px;
+    margin:  0px;
+    background-color: rgb(43, 130, 188);
+
+}
+li{
+
+    padding: 10px 10px 10px 50px ;
+    margin: 5px;
+    display: inline-block;
+    font: bold 15px sans-serif;
+    font-size: x-large;
+}
+
+a{
+    color:black;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+}
+*{
+    padding: 0px;
+    margin:  0px;
+}
+li:hover{
+    color:rgb(58, 6, 247);
+    text-decoration:underline;
+    cursor:pointer;
+}
+table{
+
+    text-align:center;
+}
+.dimen{
+    width: 450px;
+    height: 400px;
+}
+.center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+.victus{
+    background-color:rgb(247, 243, 241);
+}
+.grad{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    width: 600px;
+    height: 200px;
+    border-radius: 20px;
+    background-color: rgb(124, 185, 226);
+
+}
+.back{
+
+    background-color:beige;
+
+}
+.txt{
+    font-size: x-large;
+}
+.imgs{
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+}
+.aboutusimg{
+    border-radius: 20px;
+}
+.contact{
+    border-radius: 20px;
+    padding:30px;
+    margin: 30px;
+    top: 10px;
+}
+.card-title{
+    font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    font-size: x-large;
+}
+/* .ASUS{
+    background-color: rgb(242, 135, 242);
+}
+.asuss{
+    background-color:rebeccapurple;
+}
+.ASUST{
+    background-color: rgb(232, 178, 15);
+}
+.asussT{
+    background-color:gray;
+}
+.ASUSR{
+    background-color: skyblue;
+}
+.asussR{
+    background-color:rgb(54, 9, 180);
+} */

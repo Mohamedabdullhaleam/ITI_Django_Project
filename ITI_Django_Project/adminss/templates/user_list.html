@@ -1,0 +1,45 @@
+{#<!-- user_list.html -->#}
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#    <title>User List</title>#}
+{#</head>#}
+{#<body>#}
+{#    <h1>User List</h1>#}
+{#    <ul>#}
+{#        {% for user in users %}#}
+{#            <li>{{ user.username }}</li>#}
+{#        {% endfor %}#}
+{#    </ul>#}
+{#</body>#}
+{#</html>#}
+{% extends 'layout/base.html' %}
+{% load static %}
+{% block title %}  all users {% endblock %}
+
+
+{% block content %}
+    {% for user in users %}
+{#            <li>{{ user.username }}</li>#}
+
+    <br/>
+    User name : {{user.username}}
+    <br/>
+    First Name:{{user.first_name}}
+    <br/>
+    Last Name:{{user.last_name}}
+    <br/>
+    Email:{{user.email}}
+        <hr>
+
+     {% endfor %}
+<br/>
+    <a href="{% url 'books.index' %}" class="btn btn-danger">return</a>
+
+
+    {% endblock %}
+
+{#
+
+
+

@@ -1,0 +1,25 @@
+<!-- student/borrowed_books.html -->
+{% extends 'layout/base.html' %}
+{% block title %}Borrowed Books{% endblock %}
+
+{% block content %}
+<br/>
+
+
+    {% for borrowed_book in borrowed_books %}
+      <div style="display:inline-block">
+        <div class="card" style="width: 18rem;">
+            <img src="{{borrowed_book.book.get_image_url}}" width="200" height="200" class="card-img-top"
+                 alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{borrowed_book.book.name}}</h5>
+           </div>
+             <div class="card-body">
+                <h5 class="card-title">{{book.name}}</h5>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+
+{% endblock %}

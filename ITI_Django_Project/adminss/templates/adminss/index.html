@@ -1,0 +1,26 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% block title %}  All Users  {% endblock %}
+
+{% block content %}
+
+    <h2 style="text-align:center;font-size:40px"> All Users </h2>
+<br/>
+
+
+    {% for user in users %}
+
+    <div style="display:inline-block">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{user.username}}</h5>
+                <h6 class="card-title">First Name:{{user.first_name}}</h6>
+                <h6 class="card-title">Last Name:{{user.last_name}}</h6>
+                <h6 class="card-title">Email:{{user.email}}</h6>
+
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'layout/base.html'  %}
+{% load static %}
+{% block title %} Book info  {% endblock %}
+
+{% block content %}
+
+
+    <div style="display:inline-block" align="center">
+        <div class="card" style="width: 18rem;">
+            <img src="{{books.get_image_url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Name:{{books.name}}</h5>
+                <h5 class="card-title">category:{{books.category}}</h5>
+                <p> author: {{books.auther}}</p>
+                <p>created at:{{books.created_at}}</p>
+                <a href="{% url 'books.index'%}" class="btn btn-primary">return to main Books</a>
+            </div>
+        </div>
+    </div>
+
+<h1> this book in the {{books.category}} category </h1>
+
+{% for b in books.author.books.all %}
+{% if b.id != books.id %}
+    <li><a href="{{b.get_show_url}}">{{b.name}}</a></li>
+{% endif %}
+
+{% endfor %}
+
+{%endblock%}

@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="icon" href="{% static 'students/images/online-shop.png' %}"/>
+    <link rel="stylesheet" href="{% static 'students/bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'students/css/Mstyle.css' %}"/>
+
+    <!--    <script src="{% static 'students/js/script.js' %}"></script>-->
+</head>
+<body>
+<ul>
+    {% if user.is_superuser %}
+        <a href="{% url 'books.index' %}"><li>Our books</li></a>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <a href="{% url 'all_borrowed_books' %}" target="_blank"><li class="right">All borrowed books</li></a>
+        <a href="{% url 'profile' %}" target="_blank"><li class="right">Profile</li></a>
+{#        <a href="{% url 'borrowed_books' %}" target="_blank"><li class="right">borrowed books</li></a>#}
+        <a href="{% url 'user_list' %}" target="_blank"><li class="right">Users</li></a>
+
+        {% if user.id %}
+            <a href="{% url 'logout' %}" target="_blank">
+                 <li class="right" style="color: #8e1f1f">Logout</li>
+            </a>
+        {% else %}
+            <a href="{% url 'login' %}" target="_blank">
+                <li class="right">Log In</li>
+            </a>
+            <a href="{% url 'register' %}" target="_blank">
+                <li class="right">Register</li>
+            </a>
+        {% endif %}
+    {% else %}
+
+        {% if not user.is_authenticated and not user.is_superuser %}
+            {% if user.id %}
+                <a href="{% url 'logout' %}" target="_blank"> <li class="right" style="color: #852525">Logout</li>
+            {% else %}
+                <a href="{% url 'login' %}" target="_blank"><li class="right">Log In</li></a>
+                <a href="{% url 'register' %}" target="_blank"><li class="right">Register</li></a>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+    {% if user.is_authenticated and not user.is_superuser %}
+        <a href="{% url 'all_books' %}"><li>Home</li></a>
+
+        <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+        <a href="{% url 'profile' %}" target="_blank"><li class="right">Profile</li></a>
+        <a href="{% url 'borrowed_books' %}" target="_blank"><li class="right">Borrowed books</li></a>
+{#        <a href="{% url 'uesr.info' %}" target="_blank"><li class="right">users</li></a>#}
+
+        {% if user.id %}
+            <a href="{% url 'logout' %}" target="_blank">
+                <li class="right" style="color: #812727">Logout</li>
+            </a>
+        {% else %}
+            <a href="{% url 'login' %}" target="_blank">
+                <li class="right">Log In</li>
+            </a>
+            <a href="{% url 'register' %}" target="_blank">
+                <li class="right">Register</li>
+            </a>
+        {% endif %}
+    {% endif %}
+</ul>
+
+<div class="container">
+    <div class=" font-monospace">
+        {% block content %}
+        {% endblock %}
+        </br> <br>
+        <div style=" font-family: Courier; font-style: italic;">
+        </div>
+        {% block body %}
+
+        {% endblock %}
+    </div>
+</div>
+</body>
+</html>
